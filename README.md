@@ -1,6 +1,6 @@
 # IT-VISION-SCHOOL-CLASS
 ## HTML, CSS를 활용한 움직이는 정육면체 만들기
-
+### html코드
 ```html
 <div class="cube">
     <div class="face front">앞면</div>
@@ -11,6 +11,7 @@
     <div class="face right">오른쪽면</div>
 </div>
 ```
+### css코드
 ```css
 .cube {
     padding-top: 400px;
