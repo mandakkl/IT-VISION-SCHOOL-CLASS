@@ -47,6 +47,57 @@
     to { transform: rotateX(360deg) rotateY(360deg); }
 }
 ```
+# 디지털 시계 만들기
+### html코드
+```html
+<div class="clock" id="clock">00:00:00</div>
+```
+### css코드
+```css
+html,body {
+    height: 100%;
+}
+body{
+    background: #0f3854;
+    background: radial-gradient(ellipse at center, #0a2e38 0%, #000 70%);
+    background-size: 100%;
+  
+}
+#clock{
+    color: #daf6ff;
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+}
+```
+### js코드
+```js
+function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // 시, 분, 초가 한 자리 숫자일 경우 앞에 0을 붙여줍니다.
+    hours = (hours < 10) ? '0' + hours : hours;
+    minutes = (minutes < 10) ? '0' + minutes : minutes;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+    // 시계 업데이트
+    var clock = document.getElementById('clock');
+    clock.textContent = hours + ':' + minutes + ':' + seconds;
+}
+
+// 1초마다 시계 업데이트
+setInterval(updateClock, 1000);
+```
 # 계산기 만들기
 ### html코드
 ```html
