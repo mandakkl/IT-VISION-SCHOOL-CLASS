@@ -101,7 +101,16 @@ setInterval(updateClock, 1000);
 ## 계산기 만들기
 ### html코드
 ```html
-<div class="calculator">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="calculator">
         <input type="text" id="display" disabled>
         <div class="buttons">
             <button onclick="appendNumber('1')">1</button>
@@ -123,4 +132,74 @@ setInterval(updateClock, 1000);
         </div>
     </div>
     <script src="./js/main.js"></script>
+</body>
+</html>
+```
+### css코드
+```css
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    background-color: rgb(59, 10, 133);
+}
+.calculator {
+    background-color: rgb(147, 91, 152);
+    width: 430px;
+    margin: 50px auto;
+    margin-top: 200px;
+    padding: 20px;
+    border: 1px solid #1d0541;
+    border-radius: 5px;
+}
+
+input#display {
+    background-color: rgb(29, 23, 32);
+    width: 95%;
+    height: 100px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 50px;
+    padding: 5px;
+    color: white;
+}
+
+.buttons button {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: rgb(189, 155, 249);
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+```
+### js코드
+```js
+let display = document.getElementById('display');
+
+function appendNumber(number) {
+    display.value += number;
+}
+
+function performOperation(operator) {
+    display.value += operator;
+}
+
+function clearDisplay() {
+    display.value = '';
+}
+
+function calculateResult() {
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = 'Error';
+    }
+}
 ```
