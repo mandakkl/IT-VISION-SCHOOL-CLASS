@@ -47,7 +47,7 @@
     to { transform: rotateX(360deg) rotateY(360deg); }
 }
 ```
-## $\bf{\large{\color{#6580DD}디지털 시계 만들기}}$
+## ${{\color{#6580DD}디지털 시계 만들기}}$
 ### html코드
 ```html
 <div class="clock" id="clock">00:00:00</div>
