@@ -47,7 +47,7 @@
     to { transform: rotateX(360deg) rotateY(360deg); }
 }
 ```
-# 디지털 시계 만들기
+## 디지털 시계 만들기
 ### html코드
 ```html
 <div class="clock" id="clock">00:00:00</div>
@@ -98,7 +98,7 @@ function updateClock() {
 // 1초마다 시계 업데이트
 setInterval(updateClock, 1000);
 ```
-# 계산기 만들기
+## 계산기 만들기
 ### html코드
 ```html
 <div class="calculator">
