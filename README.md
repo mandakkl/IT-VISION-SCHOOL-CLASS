@@ -47,7 +47,7 @@
     to { transform: rotateX(360deg) rotateY(360deg); }
 }
 ```
-## 디지털 시계 만들기
+## $\huge{\rm{\color{#5ad7b7}큰글씨\ 로만체\ 초록색}}$디지털 시계 만들기
 ### html코드
 ```html
 <div class="clock" id="clock">00:00:00</div>
