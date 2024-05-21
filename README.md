@@ -203,3 +203,206 @@ function calculateResult() {
     }
 }
 ```
+## poktmon
+### html코드
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokemon</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <div class="contain">
+        <div class="cloud"><img src="./images/cloud_1.png" alt="구름_1"></div>
+        <div class="cloud"><img src="./images/cloud_2.png" alt="구름_2"></div>
+        <div class="cloud"><img src="./images/cloud_3.png" alt="구름_3"></div>
+        <div class="logo">
+            <img src="./images/logo.png" alt="포켓몬 로고">
+        </div>
+        <div class="inner">
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+           <div class="pokemon">
+            <div class="images"></div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+### css코드
+```css
+*{
+    text-decoration: none;
+}
+
+body{
+    background-image: url(../images/back.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow-x: hidden;
+    height: 100vh;
+   
+}
+
+/* 구름 넣기 */
+
+.contain .cloud{
+    position: absolute;
+    z-index: -20;
+}
+
+.contain .cloud:nth-child(1){
+    left: -300px;
+    animation: 300s ease-in 1s infinite reverse both running cloud1;
+}
+@keyframes cloud1 {
+    from {
+      
+      transform: translateX(250vh);
+    }
+    to {
+     
+      transform: translateX(0);
+    }
+  }
+
+  .contain .cloud:nth-child(2){
+    right: -700px;
+    animation: 150s ease-in 1s infinite reverse both running cloud2;
+}
+@keyframes cloud2 {
+    from {
+     
+      transform: translate(-250vh);
+    }
+    to {
+     
+      transform: translateX(0);
+    }
+  }
+
+  .contain .cloud:nth-child(3){
+    top: 500px;
+    left: 100px;
+    animation: 130s ease-in 1s infinite reverse both running cloud3;
+}
+@keyframes cloud3 {
+    from {
+     
+      transform: translate(250vh);
+    }
+    to {
+     
+      transform: translateX(0);
+    }
+  }
+
+  /* 기본 잡기 */
+.contain .inner{
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+/* 로고 넣기 */
+.contain .logo{
+   margin-top: 120px;
+
+
+}
+.contain .logo img{
+    width: 450px;
+    display: block;
+    margin: 0 auto;
+    
+}
+/* 포켓몬 볼 삽입 */
+.contain .inner .pokemon{
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/ball.png);
+    background-size: contain;
+    margin: 30px;
+    transition: transform .2s,;
+}
+
+.contain .inner .pokemon .images{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: 80px;
+} 
+
+/* 포켓몬 hover */
+.contain .inner .pokemon:hover{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+.contain .inner .pokemon:nth-child(1):hover{ background-image: url(../images/pokemon_1.png);}
+.contain .inner .pokemon:nth-child(2):hover{ background-image: url(../images/pokemon_2.png);}
+.contain .inner .pokemon:nth-child(3):hover{ background-image: url(../images/pokemon_3.png);}
+.contain .inner .pokemon:nth-child(4):hover{ background-image: url(../images/pokemon_4.png);}
+.contain .inner .pokemon:nth-child(5):hover{ background-image: url(../images/pokemon_5.png);}
+.contain .inner .pokemon:nth-child(6):hover{ background-image: url(../images/pokemon_6.png);}
+.contain .inner .pokemon:nth-child(7):hover{ background-image: url(../images/pokemon_7.png);}
+.contain .inner .pokemon:nth-child(8):hover{ background-image: url(../images/pokemon_8.png);}
+.contain .inner .pokemon:nth-child(9):hover{ background-image: url(../images/pokemon_9.png);}
+.contain .inner .pokemon:nth-child(10):hover{ background-image: url(../images/pokemon_10.png);}
+.contain .inner .pokemon:nth-child(11):hover{ background-image: url(../images/pokemon_11.png);}
+.contain .inner .pokemon:nth-child(12):hover{ background-image: url(../images/pokemon_12.png);}
+.contain .inner .pokemon:nth-child(13):hover{ background-image: url(../images/pokemon_13.png);}
+.contain .inner .pokemon:nth-child(14):hover{ background-image: url(../images/pokemon_14.png);}
+.contain .inner .pokemon:nth-child(15):hover{ background-image: url(../images/pokemon_15.png);}
+
+```
