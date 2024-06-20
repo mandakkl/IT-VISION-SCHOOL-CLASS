@@ -457,7 +457,6 @@ header .inner{
     font-family: "Alfa Slab One", serif;
     font-weight: 400;
     font-style: normal;
-    /* color: #0bf7ff; */
 }
 
 .menu-toggle{
