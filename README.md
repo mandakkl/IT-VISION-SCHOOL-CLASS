@@ -406,3 +406,116 @@ body{
 .contain .inner .pokemon:nth-child(15):hover{ background-image: url(../images/pokemon_15.png);}
 
 ```
+
+### 포트폴리오 css코드
+```css
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&display=swap');
+/* common */
+html,
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{
+    text-decoration: none;
+}
+.inner{
+    width: 1100px;
+    margin: 0 auto;
+}
+@media (max-width: 768px){
+    .inner{
+        width: 90%;
+    }
+}
+
+/* header */
+header{
+    background-color: #333;
+    height: 70px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+header .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.logo{
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* color: #0bf7ff; */
+}
+
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+header .inner ul{
+    display: flex;
+}
+
+header .inner ul > li{
+    margin-left: 20px;
+}
+
+header .inner ul > li > a{
+    color: #fff;
+}
+header .inner ul > li > a:hover{
+    color: #0bf7ff;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    header{
+        height: 50px;
+    }
+    .logo{
+        line-height: 50px;
+        padding-left: 10px;
+    }
+    .menu-toggle{
+        display: block;
+        padding-right: 10px;
+    }
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #1c1c1c;
+        width: 100%;
+        top: 50px;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+    
+    }
+    .nav-links.show{
+        max-height: 300px;
+    }
+    header .inner ul{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .nav-links li{
+        padding: 20px 0;
+    }
+}
+```
