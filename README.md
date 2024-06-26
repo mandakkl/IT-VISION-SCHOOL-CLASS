@@ -1,6 +1,7 @@
 # IT-VISION-SCHOOL-CLASS
 ## 포트폴리오 html코드
 ```html
+<!--contect의 e를 a로 바꿔주세요-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -20,7 +21,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contect">Contect</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -30,8 +31,8 @@
     <div class="skills" id="skills"></div>
     <!-- portfolio -->
     <div class="portfolio" id="portfolio"></div>
-    <!-- contect -->
-    <div class="contect" id="contect"></div>
+    <!-- contact -->
+    <div class="contact" id="contact"></div>
     <!-- js -->
      <script src="./js/main.js"></script>
 </body>
@@ -156,8 +157,8 @@ header .inner ul > li > a:hover{
     height: 1000px;
     background-color: rgb(208, 208, 208);
 }
-/* contect */
-.contect{
+/* contact */
+.contact{
     height: 1000px;
     background-color: rgb(20, 20, 20);
 }
