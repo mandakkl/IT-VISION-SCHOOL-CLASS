@@ -9,10 +9,8 @@
     <title>portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
 <body>
-    <!-- header -->
     <header>
         <div class="inner">
             <div class="logo">S.H.J</div>
@@ -26,23 +24,22 @@
             </ul>
         </div>
     </header>
-
-    <!-- about -->
-     <div class="about" id="about"></div>
+    <!-- header -->
+    <div class="about" id="about"></div>
     <!-- skills -->
-     <div class="skills" id="skills"></div>
+    <div class="skills" id="skills"></div>
     <!-- portfolio -->
-     <div class="portfolio" id="portfolio"></div>
+    <div class="portfolio" id="portfolio"></div>
     <!-- contect -->
-     <div class="contect" id="contect"></div>
-
+    <div class="contect" id="contect"></div>
     <!-- js -->
-    <script src="./js/main.js"></script>
+     <script src="./js/main.js"></script>
 </body>
 </html>
 ```
 ## 포트폴리오 css코드
 ```css
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 /* common */
 html,
 body{
@@ -50,7 +47,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 *{
     text-decoration: none;
@@ -59,7 +55,7 @@ body{
     width: 1100px;
     margin: 0 auto;
 }
-@media (max-width: 768px){
+@media(max-width:768px){
     .inner{
         width: 90%;
     }
@@ -67,13 +63,13 @@ body{
 
 /* header */
 header{
-    background-color:#333;
+    background-color: #333;
     height: 70px;
     color: #fff;
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     z-index: 10;
@@ -87,15 +83,18 @@ header .inner{
     position: relative;
 }
 .logo{
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
 }
-.menu-toggle{                    
+.menu-toggle{
     font-size: 30px;
     cursor: pointer;
     display: none;
 }
 header .inner ul{
     display: flex;
-}                                                         
+}
 header .inner ul > li{
     margin-left: 20px;
 }
@@ -103,11 +102,13 @@ header .inner ul > li > a{
     color: #fff;
 }
 header .inner ul > li > a:hover{
-    color: #0bf7ff;
+    color:#0bf7ff;
+    cursor: pointer;
 }
-@media (max-width:768px){
+
+@media(max-width:768px){
     header{
-        height:50px
+        height: 50px;
     }
     .logo{
         line-height: 50px;
@@ -115,17 +116,18 @@ header .inner ul > li > a:hover{
     }
     .menu-toggle{
         display: block;
-        padding-right: 10px;  
+        padding-right: 10px;
     }
     .nav-links{
-        background-color: #1c1c1c;
+        display: none;
         flex-direction: column;
         position: absolute;
+        background-color: #1c1c1c;
         width: 100%;
         top: 50px;
         transition: max-height 0.3s ease-in-out;
-        max-height:0; 
-        overflow: hidden; 
+        overflow: hidden;
+        max-height: 0;
     }
     .nav-links.show{
         max-height: 300px;
@@ -139,21 +141,64 @@ header .inner ul > li > a:hover{
     }
 }
 
+/* about */
+.about{
+    height: 1000px;
+    background-color: rgb(0, 132, 255);
+}
+/* skills */
+.skills{
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+}
+/* portfolio */
+.portfolio{
+    height: 1000px;
+    background-color: rgb(208, 208, 208);
+}
+/* contect */
+.contect{
+    height: 1000px;
+    background-color: rgb(20, 20, 20);
+}
 ```
 ## 포트폴리오 js코드
 ```js
-// 모바일_toggle
-document.addEventListener("DOMContentLoaded", function() {
+//모바일_toggle
+document.addEventListener("DOMContentLoaded",function(){
     const header = document.querySelector("header");
     const navLinks = document.getElementById("nav-links");
     const menuToggle = document.getElementById("menu-toggle");
 
-    function getHeaderHeight() {
+    function getHeaderHeight(){
         return header.offsetHeight;
     }
 
-    menuToggle.addEventListener("click", function() {
+    menuToggle.addEventListener("click", function(){
         navLinks.classList.toggle("show");
+    });
+    
+    //슬라이드
+    document.querySelectorAll("header .inner ul li a").forEach(anchor => {
+        anchor.addEventListener("click",function(e){
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if(targetElement){
+                window.scrollTo({
+                    top: targetElement.offsetTop - getHeaderHeight(),
+                    behavior: "smooth"
+                });
+                navLinks.classList.remove("show");
+            }else{
+                console.error(`Element with ID '${targetId}' not found.`);
+            }
+        });
+    });
+
+    window.addEventListener("resize", function(){
+        getHeaderHeight();
     });
 });
 ```
