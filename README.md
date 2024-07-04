@@ -32,9 +32,9 @@
                     <img src="./images/pic.jpg" alt="3d 얼굴사진">
                 </div>
                 <div class="about_name about_nameany" id="about_name">
-                    Song Hyun Jin
+                    이름
                 </div>
-                <p class="about_job about_jobany" id="about_job"> Wep Developer</p>
+                <p class="about_job about_jobany" id="about_job"> 직종</p>
                 <div class="about_text">
                     This is my portfolio site.<br>
                     Please look around and contact me if you like it.
