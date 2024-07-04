@@ -1,7 +1,6 @@
 # IT-VISION-SCHOOL-CLASS
 ## 포트폴리오 html코드
 ```html
-<!--contect의 e를 a로 바꿔주세요-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,8 +24,24 @@
             </ul>
         </div>
     </header>
-    <!-- header -->
-    <div class="about" id="about"></div>
+    <!-- about -->
+    <div class="about" id="about">
+        <div class="about_contain" id="about_contain">
+            <div class="about_wrap">
+                <div class="img_wrap about_imgany" id="about_imgany">
+                    <img src="./images/pic.jpg" alt="3d 얼굴사진">
+                </div>
+                <div class="about_name about_nameany" id="about_name">
+                    Song Hyun Jin
+                </div>
+                <p class="about_job about_jobany" id="about_job"> Wep Developer</p>
+                <div class="about_text">
+                    This is my portfolio site.<br>
+                    Please look around and contact me if you like it.
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- skills -->
     <div class="skills" id="skills"></div>
     <!-- portfolio -->
@@ -145,8 +160,28 @@ header .inner ul > li > a:hover{
 /* about */
 .about{
     height: 1000px;
+    overflow-x:hidden;
+}
+.about #about_contain{
+    width: 100%;
+    height: 100%;
     background-color: rgb(0, 132, 255);
 }
+.about_wrap{
+    position: relative;
+    top: 300px;
+    text-align: center;
+}
+.img_wrap{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
 /* skills */
 .skills{
     height: 1000px;
