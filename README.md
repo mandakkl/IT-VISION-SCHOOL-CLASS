@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="inner">
-            <div class="logo">S.H.J</div>
+            <div class="logo">본인 이니셜</div>
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
             <ul class="nav-links" id="nav-links">
@@ -32,9 +32,9 @@
                     <img src="./images/pic.jpg" alt="3d 얼굴사진">
                 </div>
                 <div class="about_name about_nameany" id="about_name">
-                    이름
+                    본인 이름
                 </div>
-                <p class="about_job about_jobany" id="about_job"> 직종</p>
+                <p class="about_job about_jobany" id="about_job"> Wep Developer</p>
                 <div class="about_text">
                     This is my portfolio site.<br>
                     Please look around and contact me if you like it.
@@ -43,7 +43,54 @@
         </div>
     </div>
     <!-- skills -->
-    <div class="skills" id="skills"></div>
+    <div class="skills inner" id="skills">
+        <div class="title">Skills</div>
+        <p>HTML, CSS, JS, 3D, Photoshop, Illustrator <br>
+            I can work using various programs.</p>
+
+            <div class="skill">
+                <div class="skill_name">HTMl</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(252, 92, 92);"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <div class="skill_name">CSS</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(255, 183, 111);"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <div class="skill_name">JS</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="80%" style="max-width: 80%; background-color: rgb(91, 255, 140);"></div>
+                </div>
+            </div>
+    
+            <div class="skill">
+                <div class="skill_name">3D</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(106, 125, 255);"></div>
+                </div>
+            </div>
+           
+            <div class="skill">
+                <div class="skill_name">Photoshop</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="100%" style="max-width: 100%; background-color: rgb(209, 91, 255);"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill_name">Illustrator</div>
+                <div class="skill_bar">
+                    <div class="skill_per" per="100%" style="max-width: 100%; background-color: rgb(255, 91, 151);"></div>
+                </div>
+            </div>
+         
+    </div>
     <!-- portfolio -->
     <div class="portfolio" id="portfolio"></div>
     <!-- contact -->
@@ -184,8 +231,113 @@ header .inner ul > li > a:hover{
 
 /* skills */
 .skills{
+    width: 100%;
+    max-width: 900px;
     height: 1000px;
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+.skills .title{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 140px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.skills>p{
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.skill{
+    padding: 0 40px;
+}
+.skill_name{
+    font-size: 25px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    margin: 25px 0 5px 0;
+}
+.skill_bar{
+    height: 35px;
+    background-color: #c9c9c9;
+    
+}
+.skill_per{
+    height: 35px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: width 2.5s, opacity 2.5s;
+}
+.skill_per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 8px 10px;
+    background-color: #222;
+    border-radius: 4px;
+    font-size: 20px;
+    top: -50px;
+    right: 0;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 2.5s;
+    
+}
+.skill_per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 2.5s;
+}
+.skill_per.fillcolor {
+    width: 100%;
+    opacity: 1;
+    animation: fillcolor 2s 1 forwards;
+}
+.skill_per.fillcolor::before,
+.skill_per.fillcolor::after{
+    opacity: 1;
+}
+
+@keyframes fillcolor{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+
+@media(max-width:1024px){
+    .skill{
+        padding: 0 40px;
+    }
+}
+
+@media(max-width:768px){
+    .skill{
+        padding: 0 40px;
+    }
 }
 /* portfolio */
 .portfolio{
@@ -200,11 +352,15 @@ header .inner ul > li > a:hover{
 ```
 ## 포트폴리오 js코드
 ```js
+
+
 //모바일_toggle
 document.addEventListener("DOMContentLoaded",function(){
     const header = document.querySelector("header");
     const navLinks = document.getElementById("nav-links");
     const menuToggle = document.getElementById("menu-toggle");
+    const skillsSection = document.querySelector("#skills");
+    let observer;
 
     function getHeaderHeight(){
         return header.offsetHeight;
@@ -227,6 +383,11 @@ document.addEventListener("DOMContentLoaded",function(){
                     behavior: "smooth"
                 });
                 navLinks.classList.remove("show");
+
+                 // Skills 섹션에 도달하면 애니메이션 시작
+                 if (targetId === "skills") {
+                    activateSkillBars();
+                }
             }else{
                 console.error(`Element with ID '${targetId}' not found.`);
             }
@@ -236,6 +397,46 @@ document.addEventListener("DOMContentLoaded",function(){
     window.addEventListener("resize", function(){
         getHeaderHeight();
     });
+
+     // 페이지 로드 시 skills 섹션이 보이면 애니메이션 시작
+     let skillPers = document.querySelectorAll(".skill_per");
+     window.addEventListener('scroll', function() {
+     let value = window.scrollY + window.innerHeight;
+     let triggerPoint = document.querySelector("#skills").offsetTop + document.querySelector("#skills").offsetHeight * 0.93; // 애니메이션을 트리거할 위치 조정
+
+     console.log("scrollY + window.innerHeight", value);
+     console.log("triggerPoint", triggerPoint);
+
+     if (value > triggerPoint) {
+        skillPers.forEach(skillPer => {
+            skillPer.classList.add('fillcolor');
+        });
+     }
+});
+
+    //skills bar 구동
+    function activateSkillBars(){
+        const skillElements = document.querySelectorAll('.skill_per');
+
+        if(observer){
+            observer.disconnect();
+        }
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    skillElements.forEach(skill =>{
+                        skill.classList.add('fillcolor');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillElements.forEach(skill =>{
+            skill.classList.remove('fillcolor');
+        });
+        observer.observe(skillsSection);
+    }
 });
 ```
 ## HTML, CSS를 활용한 움직이는 정육면체 만들기
