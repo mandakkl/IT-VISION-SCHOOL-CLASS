@@ -103,6 +103,8 @@
 ## 포트폴리오 css코드
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 /* common */
 html,
 body{
@@ -168,7 +170,14 @@ header .inner ul > li > a:hover{
     color:#0bf7ff;
     cursor: pointer;
 }
-
+@media(max-width:1024px){
+    .logo{
+        padding-left: 10px;
+    }
+    .nav-links{
+        padding-right: 10px;
+    }
+}
 @media(max-width:768px){
     header{
         height: 50px;
