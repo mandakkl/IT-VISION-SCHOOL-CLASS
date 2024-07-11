@@ -281,73 +281,8 @@ header .inner ul > li > a:hover{
     background-color: #c9c9c9;
     
 }
-.skill_per{
-    height: 35px;
-    color: #fff;
-    font-weight: bold;
-    position: relative;
-    width: 100%;
-    opacity: 0;
-    transition: width 2.5s, opacity 2.5s;
-}
-.skill_per::before{
-    content: attr(per);
-    position: absolute;
-    padding: 8px 10px;
-    background-color: #222;
-    border-radius: 4px;
-    font-size: 20px;
-    top: -50px;
-    right: 0;
-    transform: translateX(50%);
-    opacity: 0;
-    transition: opacity 2.5s;
-    
-}
-.skill_per::after{
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #222;
-    top: -20px;
-    right: 0;
-    transform: translateX(50%) rotate(45deg);
-    border-radius: 2px;
-    opacity: 0;
-    transition: opacity 2.5s;
-}
-.skill_per.fillcolor {
-    width: 100%;
-    opacity: 1;
-    animation: fillcolor 2s 1 forwards;
-}
-.skill_per.fillcolor::before,
-.skill_per.fillcolor::after{
-    opacity: 1;
-}
-
-@keyframes fillcolor{
-    from{
-        width: 0%;
-    }
-    to{
-        width: 100%;
-    }
-}
 
 
-@media(max-width:1024px){
-    .skill{
-        padding: 0 40px;
-    }
-}
-
-@media(max-width:768px){
-    .skill{
-        padding: 0 40px;
-    }
-}
 /* portfolio */
 .portfolio{
     height: 1000px;
@@ -367,9 +302,6 @@ header .inner ul > li > a:hover{
 document.addEventListener("DOMContentLoaded",function(){
     const header = document.querySelector("header");
     const navLinks = document.getElementById("nav-links");
-    const menuToggle = document.getElementById("menu-toggle");
-    const skillsSection = document.querySelector("#skills");
-    let observer;
 
     function getHeaderHeight(){
         return header.offsetHeight;
@@ -393,10 +325,6 @@ document.addEventListener("DOMContentLoaded",function(){
                 });
                 navLinks.classList.remove("show");
 
-                 // Skills 섹션에 도달하면 애니메이션 시작
-                 if (targetId === "skills") {
-                    activateSkillBars();
-                }
             }else{
                 console.error(`Element with ID '${targetId}' not found.`);
             }
@@ -407,45 +335,7 @@ document.addEventListener("DOMContentLoaded",function(){
         getHeaderHeight();
     });
 
-     // 페이지 로드 시 skills 섹션이 보이면 애니메이션 시작
-     let skillPers = document.querySelectorAll(".skill_per");
-     window.addEventListener('scroll', function() {
-     let value = window.scrollY + window.innerHeight;
-     let triggerPoint = document.querySelector("#skills").offsetTop + document.querySelector("#skills").offsetHeight * 0.93; // 애니메이션을 트리거할 위치 조정
-
-     console.log("scrollY + window.innerHeight", value);
-     console.log("triggerPoint", triggerPoint);
-
-     if (value > triggerPoint) {
-        skillPers.forEach(skillPer => {
-            skillPer.classList.add('fillcolor');
-        });
-     }
-});
-
-    //skills bar 구동
-    function activateSkillBars(){
-        const skillElements = document.querySelectorAll('.skill_per');
-
-        if(observer){
-            observer.disconnect();
-        }
-        observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    skillElements.forEach(skill =>{
-                        skill.classList.add('fillcolor');
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        skillElements.forEach(skill =>{
-            skill.classList.remove('fillcolor');
-        });
-        observer.observe(skillsSection);
-    }
+     
 });
 ```
 ## HTML, CSS를 활용한 움직이는 정육면체 만들기
