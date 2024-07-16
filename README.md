@@ -481,6 +481,10 @@ document.addEventListener("DOMContentLoaded",function(){
                 });
                 navLinks.classList.remove("show");
 
+                 // Skills 섹션에 도달하면 애니메이션 시작
+                 if (targetId === "skills") {
+                    activateSkillBars();
+                }
             }else{
                 console.error(`Element with ID '${targetId}' not found.`);
             }
@@ -491,7 +495,47 @@ document.addEventListener("DOMContentLoaded",function(){
         getHeaderHeight();
     });
 
-     
+    //skills bar 구동
+    function activateSkillBars(){
+        const skillElements = document.querySelectorAll('.skill_per');
+
+        if(observer){
+            observer.disconnect();
+        }
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    skillElements.forEach(skill =>{
+                        skill.classList.add('fillcolor');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillElements.forEach(skill =>{
+            skill.classList.remove('fillcolor');
+        });
+        observer.observe(skillsSection);
+    }
+
+
+     // 페이지 로드 시 skills 섹션이 보이면 애니메이션 시작
+     let skillPers = document.querySelectorAll(".skill_per");
+     window.addEventListener('scroll', function() {
+     let value = window.scrollY + window.innerHeight;
+     let triggerPoint = document.querySelector("#skills").offsetTop + document.querySelector("#skills").offsetHeight * 0.93; //  애니메이션을 트리거할 위치 조정/기본 0.93(5개~6개)/0.7(10~12개)/0.5(15~16개)
+
+     console.log("scrollY + window.innerHeight", value);
+     console.log("triggerPoint", triggerPoint);
+
+     if (value > triggerPoint) {
+        skillPers.forEach(skillPer => {
+            skillPer.classList.add('fillcolor');
+        });
+     }
+});
+
 });
 ```
 ## HTML, CSS를 활용한 움직이는 정육면체 만들기
