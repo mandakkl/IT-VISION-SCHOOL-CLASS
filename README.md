@@ -215,7 +215,7 @@ header .inner ul > li > a:hover{
 
 /* about */
 .about{
-    height: 1000px;
+    height: 1300px;
     overflow-x:hidden;
 }
 .about #about_contain{
@@ -225,16 +225,104 @@ header .inner ul > li > a:hover{
 }
 .about_wrap{
     position: relative;
-    top: 300px;
+    top: 450px;
     text-align: center;
 }
 .img_wrap{
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 100%;
     margin: 0 auto;
     position: relative;
+}
+.img_wrap img{
+    width: 300px;
+    height: 300px;
+}
+.about_imgany{
+    -webkit-animation: about_img 2s infinite linear;
+
+    animation: about_img 2s infinite linear;
+}
+
+@keyframes about_img {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -25px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.about_name{
+    color: #fff;
+    font-size: 35px;
+    margin: 15px 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.about_nameany{
+    -webkit-animation: about_name 2s 1 ease-in;
+    animation: about_name 2s 1 ease-in;
+}
+
+@keyframes about_name {
+    0% {
+        -webkit-transform: translateX(-200px);
+        transform: translateX(-200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+.about_job{
+    color: #fff;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-style: italic;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.about_jobany{
+    -webkit-animation: about_job 2s 1 ease-in;
+            animation: about_job 2s 1 ease-in;
+}
+
+@keyframes about_job {
+    0% {
+        -webkit-transform: translateX(200px);
+        transform: translateX(200px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+.about_text{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+@media(max-width:768px){
+    .about{
+        height: 900px;
+    }
+    .about_wrap{
+        top: 200px; 
+    }
 }
 
 
@@ -242,9 +330,9 @@ header .inner ul > li > a:hover{
 .skills{
     width: 100%;
     max-width: 900px;
-    height: 1000px;
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
+    padding-bottom: 140px;
 }
 .skills .title{
     text-align: center;
@@ -281,8 +369,73 @@ header .inner ul > li > a:hover{
     background-color: #c9c9c9;
     
 }
+.skill_per{
+    height: 35px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: width 2.5s, opacity 2.5s;
+}
+.skill_per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 8px 10px;
+    background-color: #222;
+    border-radius: 4px;
+    font-size: 20px;
+    top: -50px;
+    right: 0;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 2.5s;
+    
+}
+.skill_per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 2.5s;
+}
+.skill_per.fillcolor {
+    width: 100%;
+    opacity: 1;
+    animation: fillcolor 2s 1 forwards;
+}
+.skill_per.fillcolor::before,
+.skill_per.fillcolor::after{
+    opacity: 1;
+}
+
+@keyframes fillcolor{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
 
 
+@media(max-width:1024px){
+    .skill{
+        padding: 0 40px;
+    }
+}
+
+@media(max-width:768px){
+    .skill{
+        padding: 0 40px;
+    }
+}
 /* portfolio */
 .portfolio{
     height: 1000px;
@@ -302,6 +455,9 @@ header .inner ul > li > a:hover{
 document.addEventListener("DOMContentLoaded",function(){
     const header = document.querySelector("header");
     const navLinks = document.getElementById("nav-links");
+    const menuToggle = document.getElementById("menu-toggle");
+    const skillsSection = document.querySelector("#skills");
+    let observer;
 
     function getHeaderHeight(){
         return header.offsetHeight;
