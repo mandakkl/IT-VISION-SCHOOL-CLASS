@@ -495,7 +495,6 @@ header .inner ul > li > a:hover{
     flex-wrap: wrap;
     margin: 15px;
     display: none;
-    box-shadow: 3px 3px 3px 3px rgb(189, 189, 189);
 }
 .portfolio .port_box_contain .port_box img{
     width: 100%;
