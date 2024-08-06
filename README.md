@@ -91,8 +91,28 @@
             </div>
          
     </div>
-    <!-- portfolio -->
-    <div class="portfolio" id="portfolio"></div>
+   <!-- portfolio -->
+    <div class="portfolio" id="portfolio">
+        <div class="title">Portfolio</div>
+        <p>Please take a good look at my portfolio</p>
+        <div class="port_wrap">
+            <div class="port_box_contain">
+                <div class="port_box"><a href=""><img src="./images/port_1.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_2.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_3.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_4.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_5.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_6.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_7.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_8.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_9.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_10.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_11.png" alt=""></a></div>
+                <div class="port_box"><a href=""><img src="./images/port_12.png" alt=""></a></div>
+            </div>
+        </div>
+        <div class="port_button"></div>
+  </div>
     <!-- contact -->
     <div class="contact" id="contact"></div>
     <!-- js -->
@@ -438,8 +458,79 @@ header .inner ul > li > a:hover{
 }
 /* portfolio */
 .portfolio{
-    height: 1000px;
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(231, 231, 231); 
+}
+.portfolio .title{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 140px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.portfolio>p{
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.portfolio .port_wrap{
+    width: 100%; 
+    overflow: hidden; /* 중앙 정렬 시 콘텐츠가 넘치지 않도록 설정 */
+}
+.portfolio .port_box_contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 모든 박스들이 중앙 정렬 */
+}
+.portfolio .port_box_contain .port_box{
+    width: 400px;
+    height: 600px;
+    flex-wrap: wrap;
+    margin: 15px;
+    display: none;
+    box-shadow: 3px 3px 3px 3px rgb(189, 189, 189);
+}
+.portfolio .port_box_contain .port_box img{
+    width: 100%;
+}
+.portfolio .port_box_contain .port_box:last-child{
+    margin-bottom: 150px;
+}
+.portfolio .port_button{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 50px;
+    padding-bottom: 180px;
+    
+}
+.portfolio .port_button::after{
+    content: "더보기";
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-color: rgb(0, 132, 255);
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; 
 }
 /* contact */
 .contact{
