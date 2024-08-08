@@ -481,7 +481,7 @@ header .inner ul > li > a:hover{
     font-style: normal;
 }
 .portfolio .port_wrap{
-    width: 100%; 
+    width: 100%;
     overflow: hidden; /* 중앙 정렬 시 콘텐츠가 넘치지 않도록 설정 */
 }
 .portfolio .port_box_contain{
@@ -625,7 +625,20 @@ document.addEventListener("DOMContentLoaded",function(){
         });
      }
 });
-
+// portfolio
+    $(function(){
+        var initialShowCount = $(window).width() <= 768 ? 3 : 5;
+        $(".port_box").slice(0, initialShowCount).show(); // 처음에 보이는 개수 설정
+        
+        $(".port_button").click(function(e){ // load more 클릭 이벤트
+            e.preventDefault();
+            var showCount = $(window).width() <= 768 ? 3 : 5;
+            $(".port_box:hidden").slice(0, showCount).show(); // 다음 숨겨진 div들을 보여줌
+            if($(".port_box:hidden").length == 0){ // 숨겨진 div가 더 이상 없으면
+                $('.port_button').hide();
+            }
+        });
+    });
 });
 ```
 ## HTML, CSS를 활용한 움직이는 정육면체 만들기
