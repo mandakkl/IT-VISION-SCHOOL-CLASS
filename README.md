@@ -9,6 +9,8 @@
     <title>portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./images/favicon.png">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -113,8 +115,17 @@
         </div>
         <div class="port_button"></div>
   </div>
-    <!-- contact -->
-    <div class="contact" id="contact"></div>
+   <!-- contact -->
+    <div class="contact" id="contact">
+        <div class="title">Contact</div>
+        <p>Fell free to contact me anytime</p>
+        <div class="contact_wrap">
+            <a href="tel:010-1111-2222"><img src="./images/call.png" alt="전화"></a>
+            <a href="https://www.facebook.com/?locale=ko_KR"><img src="./images/facebook.png" alt="페이스북"></a>
+            <a href="https://www.instagram.com/"><img src="./images/instagram.png" alt="인스타북"></a>
+            <a href="mailto:sk1234@naver.com"><img src="./images/email.png" alt="이메일"></a>
+        </div>
+    </div>
     <!-- js -->
      <script src="./js/main.js"></script>
 </body>
@@ -458,7 +469,7 @@ header .inner ul > li > a:hover{
 }
 /* portfolio */
 .portfolio{
-    background-color: rgb(231, 231, 231); 
+    background-color: #cdcdcd;
 }
 .portfolio .title{
     text-align: center;
@@ -482,18 +493,18 @@ header .inner ul > li > a:hover{
 }
 .portfolio .port_wrap{
     width: 100%;
-    overflow: hidden; /* 중앙 정렬 시 콘텐츠가 넘치지 않도록 설정 */
+    overflow: hidden;
 }
 .portfolio .port_box_contain{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* 모든 박스들이 중앙 정렬 */
+    justify-content: center;
 }
 .portfolio .port_box_contain .port_box{
+    margin: 15px;
     width: 400px;
     height: 600px;
     flex-wrap: wrap;
-    margin: 15px;
     display: none;
 }
 .portfolio .port_box_contain .port_box img{
@@ -512,29 +523,60 @@ header .inner ul > li > a:hover{
     cursor: pointer;
     margin-top: 50px;
     padding-bottom: 180px;
-    
 }
 .portfolio .port_button::after{
     content: "더보기";
     position: absolute;
     width: 300px;
     height: 50px;
+    background-color: rgb(0, 132, 255);
     color: #fff;
     font-size: 20px;
+    border-radius: 5px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    background-color: rgb(0, 132, 255);
-    border-radius: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0; 
 }
 /* contact */
 .contact{
-    height: 1000px;
-    background-color: rgb(20, 20, 20);
+    height: 600px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+.contact .title{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 140px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.contact>p{
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.contact .contact_wrap{
+    text-align: center;
+}
+.contact img{
+    width: 200px;
+}
+@media(max-width:768px){
+    .contact{
+        height: 800px;
+    }
 }
 ```
 ## 포트폴리오 js코드
