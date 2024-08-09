@@ -15,14 +15,14 @@
 <body>
     <header>
         <div class="inner">
-            <div class="logo">본인 이니셜</div>
+            <div class="logo">S.H.J</div>
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">contact</a></li>
             </ul>
         </div>
     </header>
@@ -31,12 +31,12 @@
         <div class="about_contain" id="about_contain">
             <div class="about_wrap">
                 <div class="img_wrap about_imgany" id="about_imgany">
-                    <img src="./images/pic.jpg" alt="3d 얼굴사진">
+                    <img src="./images/3d_face_15.jpg" alt="3d얼굴사진">
                 </div>
                 <div class="about_name about_nameany" id="about_name">
-                    본인 이름
+                    Song HyunJin
                 </div>
-                <p class="about_job about_jobany" id="about_job"> Wep Developer</p>
+                <p class="about_job about_jobany" id="about_job">Wep Developer</p>
                 <div class="about_text">
                     This is my portfolio site.<br>
                     Please look around and contact me if you like it.
@@ -45,77 +45,106 @@
         </div>
     </div>
     <!-- skills -->
-    <div class="skills inner" id="skills">
-        <div class="title">Skills</div>
-        <p>HTML, CSS, JS, 3D, Photoshop, Illustrator <br>
-            I can work using various programs.</p>
-
+    <div class="skills_container">
+        <div class="skills inner" id="skills">
+            <div class="title">Skills</div>
+            <p>HTML, CSS, JS, 3D, Photoshop<br>
+                I can work using various programs.
+            </p>
+    
             <div class="skill">
-                <div class="skill_name">HTMl</div>
+                <div class="skill_name">HTML</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(252, 92, 92);"></div>
+                    <div class="skill_per" per="50%" style="max-width:50%; background-color: rgb(252, 92, 92);"></div>
                 </div>
             </div>
     
             <div class="skill">
                 <div class="skill_name">CSS</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(255, 183, 111);"></div>
+                    <div class="skill_per" per="80%" style="max-width:80%; background-color: rgb(255, 183, 111);"></div>
                 </div>
             </div>
     
             <div class="skill">
                 <div class="skill_name">JS</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="80%" style="max-width: 80%; background-color: rgb(91, 255, 140);"></div>
+                    <div class="skill_per" per="60%" style="max-width:60%; background-color: rgb(91, 255, 140);"></div>
                 </div>
             </div>
     
             <div class="skill">
                 <div class="skill_name">3D</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="90%" style="max-width: 90%; background-color: rgb(106, 125, 255);"></div>
+                    <div class="skill_per" per="90%" style="max-width:90%; background-color: rgb(106, 125, 255);"></div>
                 </div>
             </div>
-           
+    
             <div class="skill">
                 <div class="skill_name">Photoshop</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="100%" style="max-width: 100%; background-color: rgb(209, 91, 255);"></div>
+                    <div class="skill_per" per="100%" style="max-width:100%; background-color: rgb(209, 91, 255);"></div>
                 </div>
             </div>
-
+    
             <div class="skill">
-                <div class="skill_name">Illustrator</div>
+                <div class="skill_name">illustrator</div>
                 <div class="skill_bar">
-                    <div class="skill_per" per="100%" style="max-width: 100%; background-color: rgb(255, 91, 151);"></div>
+                    <div class="skill_per" per="80%" style="max-width:80%; background-color: rgb(252, 92, 151);"></div>
                 </div>
             </div>
-         
+        </div>
     </div>
-   <!-- portfolio -->
+    
+    <!-- portfolio -->
     <div class="portfolio" id="portfolio">
         <div class="title">Portfolio</div>
         <p>Please take a good look at my portfolio</p>
+
         <div class="port_wrap">
             <div class="port_box_contain">
-                <div class="port_box"><a href=""><img src="./images/port_1.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_2.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_3.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_4.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_5.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_6.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_7.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_8.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_9.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_10.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_11.png" alt=""></a></div>
-                <div class="port_box"><a href=""><img src="./images/port_12.png" alt=""></a></div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_1.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_2.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_3.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_4.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_5.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_6.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_7.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_8.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_9.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_10.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_11.png" alt=""></a>
+                </div>
+                <div class="port_box">
+                    <a href="#"><img src="./images/port_12.png" alt=""></a>
+                </div>
             </div>
         </div>
         <div class="port_button"></div>
-  </div>
-   <!-- contact -->
+    </div>
+    
+    <!-- contact -->
     <div class="contact" id="contact">
         <div class="title">Contact</div>
         <p>Fell free to contact me anytime</p>
@@ -151,7 +180,7 @@ body{
     width: 1100px;
     margin: 0 auto;
 }
-@media(max-width:768px){
+@media (max-width: 768px){
     .inner{
         width: 90%;
     }
@@ -163,7 +192,7 @@ header{
     height: 70px;
     color: #fff;
     position: fixed;
-    top: 0;
+    top:0;
     left: 0;
     right: 0;
     display: flex;
@@ -188,6 +217,7 @@ header .inner{
     cursor: pointer;
     display: none;
 }
+
 header .inner ul{
     display: flex;
 }
@@ -198,18 +228,9 @@ header .inner ul > li > a{
     color: #fff;
 }
 header .inner ul > li > a:hover{
-    color:#0bf7ff;
-    cursor: pointer;
+    color: #0bf7ff;
 }
-@media(max-width:1024px){
-    .logo{
-        padding-left: 10px;
-    }
-    .nav-links{
-        padding-right: 10px;
-    }
-}
-@media(max-width:768px){
+@media (max-width:768px){
     header{
         height: 50px;
     }
@@ -222,15 +243,14 @@ header .inner ul > li > a:hover{
         padding-right: 10px;
     }
     .nav-links{
-        display: none;
+        background-color: #1c1c1c;
         flex-direction: column;
         position: absolute;
-        background-color: #1c1c1c;
         width: 100%;
         top: 50px;
         transition: max-height 0.3s ease-in-out;
+        max-height:0;
         overflow: hidden;
-        max-height: 0;
     }
     .nav-links.show{
         max-height: 300px;
@@ -240,14 +260,13 @@ header .inner ul > li > a:hover{
         align-items: center;
     }
     .nav-links li{
-        padding: 20px 0;
+        padding:20px 0 ;
     }
 }
-
 /* about */
 .about{
-    height: 1300px;
-    overflow-x:hidden;
+    height: 1000px;
+    overflow-x: hidden;
 }
 .about #about_contain{
     width: 100%;
@@ -256,62 +275,62 @@ header .inner ul > li > a:hover{
 }
 .about_wrap{
     position: relative;
-    top: 450px;
+    top: 300px;
     text-align: center;
 }
 .img_wrap{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
-    border-radius: 100%;
+    border-radius:100%;
     margin: 0 auto;
     position: relative;
 }
 .img_wrap img{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
 .about_imgany{
     -webkit-animation: about_img 2s infinite linear;
-
     animation: about_img 2s infinite linear;
 }
-
-@keyframes about_img {
-    0% {
+@keyframes about_img{
+    0%{
         top: 0;
     }
-    50% {
+    50%{
         top: -25px;
     }
-    100% {
+    100%{
         top: 0;
     }
 }
-
 .about_name{
     color: #fff;
     font-size: 35px;
     margin: 15px 0;
+    transition: all 0.4s ease-in-out;
+
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+
     font-family: "Alfa Slab One", serif;
     font-weight: 400;
     font-style: normal;
+
 }
 .about_nameany{
     -webkit-animation: about_name 2s 1 ease-in;
     animation: about_name 2s 1 ease-in;
 }
 
-@keyframes about_name {
-    0% {
+@keyframes about_name{
+    0%{
         -webkit-transform: translateX(-200px);
         transform: translateX(-200px);
     }
-    100% {
+    100%{
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
@@ -321,51 +340,52 @@ header .inner ul > li > a:hover{
     margin-bottom: 40px;
     font-weight: 400;
     font-style: italic;
+    transition: all 0.4s ease-in-out;
+
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+
 }
 .about_jobany{
     -webkit-animation: about_job 2s 1 ease-in;
-            animation: about_job 2s 1 ease-in;
+    animation: about_job 2s 1 ease-in;
 }
 
-@keyframes about_job {
-    0% {
+@keyframes about_job{
+    0%{
         -webkit-transform: translateX(200px);
         transform: translateX(200px);
     }
-    100% {
+    100%{
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
 }
 .about_text{
     color: #fff;
-    font-size: 20px;
-    line-height: 30px;
 }
 
 @media(max-width:768px){
     .about{
-        height: 900px;
+        height: 800px;
     }
     .about_wrap{
-        top: 200px; 
+        top: 200px;
     }
 }
-
-
 /* skills */
+.skills_container{
+    background-color: #ffffff;
+}
 .skills{
     width: 100%;
     max-width: 900px;
-    background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     padding-bottom: 140px;
 }
 .skills .title{
+    color: #222;
     text-align: center;
     font-size: 45px;
     padding-top: 140px;
@@ -374,7 +394,8 @@ header .inner ul > li > a:hover{
     font-weight: 600;
     font-style: normal;
 }
-.skills>p{
+.skills>p {
+    color: #222;
     text-align: center;
     font-size: 18px;
     line-height: 23px;
@@ -398,7 +419,6 @@ header .inner ul > li > a:hover{
 .skill_bar{
     height: 35px;
     background-color: #c9c9c9;
-    
 }
 .skill_per{
     height: 35px;
@@ -406,37 +426,35 @@ header .inner ul > li > a:hover{
     font-weight: bold;
     position: relative;
     width: 100%;
-    opacity: 0;
     transition: width 2.5s, opacity 2.5s;
+    opacity: 0;
 }
 .skill_per::before{
     content: attr(per);
     position: absolute;
-    padding: 8px 10px;
     background-color: #222;
     border-radius: 4px;
     font-size: 20px;
     top: -50px;
     right: 0;
+    padding: 8px 10px;
     transform: translateX(50%);
-    opacity: 0;
     transition: opacity 2.5s;
-    
+    opacity: 0;
 }
 .skill_per::after{
     content: "";
     position: absolute;
+    background-color: #222;
     width: 10px;
     height: 10px;
-    background-color: #222;
     top: -20px;
     right: 0;
     transform: translateX(50%) rotate(45deg);
-    border-radius: 2px;
-    opacity: 0;
     transition: opacity 2.5s;
+    opacity: 0;
 }
-.skill_per.fillcolor {
+.skill_per.fillcolor{
     width: 100%;
     opacity: 1;
     animation: fillcolor 2s 1 forwards;
@@ -445,7 +463,6 @@ header .inner ul > li > a:hover{
 .skill_per.fillcolor::after{
     opacity: 1;
 }
-
 @keyframes fillcolor{
     from{
         width: 0%;
@@ -454,15 +471,12 @@ header .inner ul > li > a:hover{
         width: 100%;
     }
 }
-
-
-@media(max-width:1024px){
+@media(max-width: 1024px){
     .skill{
         padding: 0 40px;
     }
 }
-
-@media(max-width:768px){
+@media (max-width:768px) {
     .skill{
         padding: 0 40px;
     }
